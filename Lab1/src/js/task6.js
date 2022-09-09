@@ -19,7 +19,7 @@ function checkNumber(number) {
 }
 
 const questionToContinue = () => {
-    let answer = prompt('Чи бажаєте ви вирішити продовжити введення?\n(так/ні)');
+    let answer = prompt('Чи бажаєте ви продовжити введення?\n(так/ні)');
 
     switch (answer) {
         case 'Так':
