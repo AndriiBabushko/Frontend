@@ -1,9 +1,5 @@
 'use strict';
 
-String.prototype.replaceAt = function (index, replacement) {
-    return this.substring(0, index) + replacement + this.substring(index + replacement.length);
-};
-
 const toCamelCase = (cssStyle) => {
     for (let i = 0; i < cssStyle.length; i++) {
         if (cssStyle[i] === '-') {
