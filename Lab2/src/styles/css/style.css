@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.index {
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.index__wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.index__container {
+  width: 90%;
+}
+
+.index__header, .index__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  border: 2px solid grey;
+  border-radius: 40px 40px 0 0;
+  background: rgba(229, 229, 229, 0.57);
+  margin: 5px 0;
+}
+
+.index__header__heading, .index__header__subheading {
+  letter-spacing: 1.2px;
+  margin: 5px 0;
+}
+.index__header__heading .index__heading__link, .index__header__heading .index__subheading__link, .index__header__subheading .index__heading__link, .index__header__subheading .index__subheading__link {
+  color: black;
+}
+.index__header__heading .index__heading__link:visited, .index__header__heading .index__subheading__link:visited, .index__header__subheading .index__heading__link:visited, .index__header__subheading .index__subheading__link:visited {
+  color: #4a4a4a;
+}
+
+.index__main {
+  background-color: rgba(229, 229, 229, 0.57);
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index__main__task {
+  border: solid black;
+  border-width: 0 0 2px 0;
+  padding: 10px 0;
+  margin: 25px 0;
+}
+
+.index__main__subtask {
+  margin: 15px 0;
+  padding: 5px 0;
+}
+
+.index__main__heading_task, .index__main__heading_subtask {
+  font-style: italic;
+  letter-spacing: 1.05px;
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+
+.index__main__heading_subtask {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.index__main__img_task {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 5px 0;
+}
+
+.index__main_p_task, .index__main_p_subtask, .index___footer_p, .copyright {
+  font-size: 18px;
+  padding: 5px 0;
+}
+.index__main_p_task a, .index__main_p_subtask a, .index___footer_p a, .copyright a {
+  color: black;
+  font-weight: bold;
+}
+.index__main_p_task a:visited, .index__main_p_subtask a:visited, .index___footer_p a:visited, .copyright a:visited {
+  color: blue;
+}
+
+.index__footer {
+  border-radius: 0 0 40px 40px;
+  padding: 5px;
+}
+
+.index__footer__heading {
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
