@@ -1,14 +1,30 @@
 'use strict';
 
-const toCamelCase = (cssStyle) => {
-    for (let i = 0; i < cssStyle.length; i++) {
-        if (cssStyle[i] === '-') {
-            cssStyle = cssStyle.substring(0, i) + cssStyle[i + 1].toUpperCase() + cssStyle.substring(i + 2);
-            break;
+const checkClassNameInput = (enteredClassName) => enteredClassName.search(' ') === -1;
+
+const removeClass = (obj, existedClass) => {
+    let classNames = obj.className;
+    let splitClassNames = classNames.split(' ');
+
+    for (let i = 0; i < splitClassNames.length; i++) {
+        console.log(splitClassNames[i]);
+        if (splitClassNames[i] === existedClass) {
+            delete splitClassNames[i];
+            obj.className = splitClassNames.join(' ').split('  ').join(' ');
+            return obj;
         }
     }
-    return cssStyle;
-}
+    return obj;
+};
 
-let cssStyleString = prompt('Введіть css стиль: ').toString();
-alert(`Сконвертований css стиль за допомогою toCamelCase(): ${toCamelCase(cssStyleString)}`);
+
+let obj = {
+    className: "open menu new my",
+};
+let newClass = prompt("Введіть ім'я класу для видалення:");
+if(checkClassNameInput(newClass)){
+    let newObj = removeClass(obj, newClass);
+    alert(`Новий об'єкт: ${newObj.className}`);
+} else {
+    alert('Назву класу введено не правильно!')
+}
