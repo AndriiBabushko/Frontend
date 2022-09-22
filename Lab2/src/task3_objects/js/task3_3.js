@@ -1,27 +1,25 @@
 'use strict'
 
-const toKebabCase = (cssStyle) => {
-    for (let i = 0; i < cssStyle.length; i++) {
-        if (cssStyle[i] === cssStyle[i].toUpperCase()) {
-            cssStyle = cssStyle.substring(0, i) + '-' + cssStyle[i].toLowerCase() + cssStyle.substring(i + 1);
-            break;
-        }
+function Dog(dogName, dogBreed, dogAge) {
+    if (!new.target) {
+        return new Dog(name);
     }
-    return cssStyle;
-};
 
-const checkUpperLetters = (string) => {
-    for (let i = 0; i < string.length; i++) {
-        if(string[i] === string[i].toUpperCase()){
-            return true;
-        }
+    this.name = dogName;
+    this.breed = dogBreed;
+    this.age = dogAge;
+
+    this.dogTalking = () => {
+        if (this.age < 1) return 'Тяф'
+        if (this.age >= 1 && this.age < 3) return 'Гав';
+        if (this.age >= 3) return 'Ррр';
     }
-    return false;
-};
-
-let cssStyleString = prompt('Введіть css стиль в CamelCase:').toString();
-if(checkUpperLetters(cssStyleString)){
-    alert(`Сконвертований css стиль за допомогою toKebabCase(): ${toKebabCase(cssStyleString)}`);
-} else{
-    alert('Введений рядок не є в стилі CamelCase!');
 }
+
+let bulldog = new Dog("Archy", "bulldog", 4);
+let germanShepherd = new Dog("Ralf", "German shepherd", 2);
+let shibaInu = new Dog("Josh", "Shiba inu", 0.5);
+
+alert(`Собака породою ${bulldog.breed} з ім'ям ${bulldog.name} і віком ${bulldog.age} говорить: ${bulldog.dogTalking()}`);
+alert(`Собака породою ${germanShepherd.breed} з ім'ям ${germanShepherd.name} і віком ${germanShepherd.age} говорить: ${germanShepherd.dogTalking()}`);
+alert(`Собака породою ${shibaInu.breed} з ім'ям ${shibaInu.name} і віком ${shibaInu.age} говорить: ${shibaInu.dogTalking()}`);
