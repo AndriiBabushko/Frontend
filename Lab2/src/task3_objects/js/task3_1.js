@@ -1,6 +1,6 @@
 'use strict';
 
-const checkClassNameInput = (enteredClassName) => enteredClassName.search(' ') !== -1;
+const checkClassNameInput = (enteredClassName) => enteredClassName.search(' ') === -1;
 
 const checkRepeatedClassNames = (className, classNames) => {
     for (let i = 0; i < classNames.length; i++) {
