@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button__section {
+  border: 2px solid black;
+  margin: 10px 0;
+  padding: 10px;
+  max-width: 30vw;
+}
+
+.outputSection {
+  border: 1px solid black;
+  margin: 10px 0;
+}
+.outputSection p {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+/*# sourceMappingURL=task4.css.map */

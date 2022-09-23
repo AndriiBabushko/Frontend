@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 4.1</title>
+    <link rel="stylesheet" href="../styles/css/task4.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <section class="button__section">
+            <label for="buttonCreateList" class="createList">Створити список</label>
+            <input type="button" value="Створити список" id="buttonCreateList">
+            <div id=outputCreateListField"></div>
+        </section>
+        <section class="button__section">
+            <label for="buttonOutputList">Вивести список</label>
+            <input type="button" value="Вивести список" id="buttonOutputList">
+            <div id="outputListField"></div>
+        </section>
+        <section class="button__section">
+            <table>
+                <tr>
+                    <td> <label for="buttonAddProductToList">Додати покупку до списку</label></td>
+                    <td><input type="button" value="Додати" id="buttonAddProductToList"></td>
+                </tr>
+                <tr>
+                    <td><label for="productName">Назва продукту:</label></td>
+                    <td><input type="text" name="productName" id="productName"></td>
+                </tr>
+                <tr>
+                    <td><label for="productCount">Кількість для покупки:</label></td>
+                    <td><input type="text" name="productCount" id="productCount"></td>
+                </tr>
+                <tr>
+                    <td><label for="productStatus">Статус продукту(+, -):</label></td>
+                    <td><input type="text" name="productStatus" id="productStatus"></td>
+                </tr>
+            </table>
+            <div id="outputAddElemToListField"></div>
+        </section>
+        <section class="button__section">
+            <table>
+                <tr>
+                    <td><label for="buttonMarkProductInList">Помітити покупку як придбану</label></td>
+                    <td><input type="button" value="Помітити" id="buttonMarkProductInList"></td>
+                </tr>
+                <tr>
+                    <td><label for="markProductInList">Введіть назву продукту:</label></td>
+                    <td><input type="text" name="markProductInList" id="markProductInList"></td>
+                </tr>
+            </table>
+            <div id="outputMarkProductInListField"></div>
+        </section>
+    </div>
+</div>
+
+    <script src="../js/task4_1.js"></script>
+</body>
+</html>
