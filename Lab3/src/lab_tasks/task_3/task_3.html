@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Task 3</title>
+    <link rel="stylesheet" href="./styles/css/task_3.css">
+    <link rel="icon" href="../../../../img/icons/racoon_animal_icon_123571.ico">
 </head>
 <body>
+<div class="wrapper">
+    <div class="container">
+        <section class="button_section">
+            <table class="button_section__table">
+                <tr>
+                    <td>
+                        <label for="textSideA" class="table__label_side_a">Enter side A:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="textSideA" id="textSideA" class="table__text_side_a" placeholder="Rectangle side A">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="textSideB" class="table__label_side_b">Enter side B:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="textSideB" id="textSideB" class="table__text_side_b" placeholder="Rectangle side B">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Get perimeter and area of rectangle" id="buttonPerimeterArea" class="table__button_perimeter_area">
+                    </td>
+                </tr>
+            </table>
+            <div class="button_section__output_perimeter_area"></div>
+        </section>
+    </div>
 
+    <script src="./js/task_3.js"></script>
+</div>
 </body>
 </html>
