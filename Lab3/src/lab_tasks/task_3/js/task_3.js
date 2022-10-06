@@ -12,8 +12,8 @@ buttonPerimeterArea.addEventListener('click', () => {
         const rectangleArea = textSideA * textSideB;
         document.querySelector('.button_section__output_perimeter_area').innerHTML =
             `<section class="output_perimeter_area__section">
-                <p>Perimeter of rectangle: <strong>${rectanglePerimeter}</strong></p>
-                <p>Area of rectangle: <strong>${rectangleArea}</strong></p>
+                <p>Perimeter of rectangle: <strong>${rectanglePerimeter}см</strong></p>
+                <p>Area of rectangle: <strong>${rectangleArea}см<sup>2</sup></strong></p>
             </section>`;
     }
 });
