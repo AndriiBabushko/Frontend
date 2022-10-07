@@ -5,6 +5,5 @@ const getRandomFloat = (fromNumber, toNumber) => Math.round((Math.random() * (to
 
 const buttonRandomNumber = document.querySelector('#buttonRandomNumber');
 buttonRandomNumber.addEventListener('click', () => {
-    const number = getRandomFloat(-100, 100);
-    document.querySelector('.div_output_number__h3').innerHTML = number
+    document.querySelector('.div_output_number__h3').innerHTML = getRandomFloat(-100, 100);
 })
