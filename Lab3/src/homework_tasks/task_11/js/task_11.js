@@ -1,7 +1,7 @@
 'use strict';
 
-const buttonAddProgressBar = document.querySelector('#buttonAddProgressBar');
 const progressBar = document.querySelector('#progressBar');
+const buttonAddProgressBar = document.querySelector('#buttonAddProgressBar');
 
 buttonAddProgressBar.addEventListener('click', () => {
     progressBar.value += 5;

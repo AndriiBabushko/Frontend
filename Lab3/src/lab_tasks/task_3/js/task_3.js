@@ -1,9 +1,11 @@
 'use strict';
 
 const buttonPerimeterArea = document.querySelector('#buttonPerimeterArea');
+
 buttonPerimeterArea.addEventListener('click', () => {
     const textSideA = parseInt(document.querySelector('#textSideA').value);
     const textSideB = parseInt(document.querySelector('#textSideB').value);
+
     if (isNaN(textSideA) || isNaN(textSideB)) {
         document.querySelector('.button_section__output_perimeter_area').innerHTML =
             `<section class="output_perimeter_area__section">
