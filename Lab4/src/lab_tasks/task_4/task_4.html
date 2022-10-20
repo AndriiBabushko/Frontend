@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+    <link rel="stylesheet" href="./styles/css/task_4.css">
+    <link rel="icon" href="../../../../img/icons/racoon_animal_icon_123571.ico">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <section class="button_section">
+            <table class="button_section__table">
+                <tr>
+                    <td>
+                        <label for="textTimeOfMovement" class="table__label_time_of_movement">Enter time of movement(sec.):</label>
+                    </td>
+                    <td>
+                        <input type="text" name="textTimeOfMovement" id="textTimeOfMovement" class="table__text_time_of_movement" placeholder="Time of movement">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="textDistance" class="table__label_distance">Enter distance(m.):</label>
+                    </td>
+                    <td>
+                        <input type="text" name="textDistance" id="textDistance" class="table__text_distance" placeholder="Distance">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Get speed of movement" id="buttonSpeedMovement" class="table__button_speed_movement">
+                    </td>
+                </tr>
+            </table>
+            <div class="button_section__output_speed_movement"></div>
+        </section>
+    </div>
+
+    <script src="./js/task_4.js"></script>
+</div>
+</body>
+</html>
