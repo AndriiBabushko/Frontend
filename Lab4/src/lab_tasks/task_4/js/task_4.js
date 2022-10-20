@@ -1,19 +1,17 @@
 'use strict';
 
-document.querySelector('#buttonSpeedMovement').addEventListener('click', () => {
-    const timeOfMovement = parseFloat(document.querySelector('#textTimeOfMovement').value);
-    const distance = parseFloat(document.querySelector('#textDistance').value);
+const textInputs = document.querySelectorAll('.table__text');
+for (let i = 0; i < textInputs.length; i++) {
+    textInputs[i].addEventListener('focus', (event) => {
+        const dataLength = parseInt(textInputs[i].dataset.length);
+        const textInputValue = textInputs[i].value;
 
-    if (isNaN(timeOfMovement) || isNaN(distance)) {
-        document.querySelector('.button_section__output_speed_movement').innerHTML =
-            `<section class="button_section__output_speed_movement">
-                <p>Incorrect type of entered values!</p>
-            </section>`;
-    } else {
-        const speedOfMovement = Math.round((distance / timeOfMovement) * 100) / 100;
-        document.querySelector('.button_section__output_speed_movement').innerHTML =
-            `<section class="output_speed_movement__section">
-                <p>Speed of movement: <strong>${speedOfMovement}km/hour</strong></p>
-            </section>`;
-    }
-});
+        if (textInputValue.length <= dataLength) {
+            textInputs[i].style.borderColor = 'green';
+            textInputs[i].style.borderWidth = '3px';
+        } else {
+            textInputs[i].style.borderColor = 'red';
+            textInputs[i].style.borderWidth = '3px';
+        }
+    });
+}
