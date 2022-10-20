@@ -23,15 +23,9 @@
   border-collapse: collapse;
 }
 
-.table__text_first_text, .table__second_text {
+.table__paragraph {
   margin: 5px 0 5px 10px;
-  height: 28px;
-}
-
-.table__button_swap {
-  height: 28px;
-  width: 100%;
-  margin: 10px 0 0 0;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=task_2.css.map */
