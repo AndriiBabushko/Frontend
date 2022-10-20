@@ -13,19 +13,31 @@
             <table class="button_section__table">
                 <tr>
                     <td>
-                        <label for="selectChooseImg" class="table__label_choose_img">Choose some image to see it:</label>
+                        <label for="olList" class="table__label_ol_list" id="labelOlList">Ol elements list:</label>
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <select name="selectChooseImg" id="selectChooseImg" class="table__select_choose_img">
-                            <option value="default">--> Select image <--</option>
-                            <option value="new_york">New York</option>
-                            <option value="los_angeles">Los Angeles</option>
-                            <option value="chicago">Chicago</option>
-                        </select>
+                        <ol class="table__ol_list" id="olList">
+                            <li class="ol_list__li_element">1</li>
+                            <li class="ol_list__li_element">2</li>
+                            <li class="ol_list__li_element">3</li>
+                            <li class="ol_list__li_element">4</li>
+                            <li class="ol_list__li_element">5</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Add element to ol list" id="buttonAddElemList" class="table__button_add_elem_list">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Remove element from ol list" id="buttonRemoveElemList" class="table__button_remove_elem_list">
                     </td>
                 </tr>
             </table>
-            <div class="button_section__output_img"></div>
         </section>
     </div>
 
