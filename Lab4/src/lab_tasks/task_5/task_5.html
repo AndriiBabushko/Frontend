@@ -13,14 +13,34 @@
             <table class="button_section__table">
                 <tr>
                     <td>
-                        <label for="colorChooseColor" class="table__label_choose_color">Choose some color:</label>
+                        <label for="element" class="table__label_element">First text element:</label>
                     </td>
                     <td>
-                        <input type="color" name="colorChooseColor" id="colorChooseColor" class="table__color_choose_color">
+                        <p id="element" class="table__p_elem first_name last_name middle_name">Some text in first element</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Add/remove first name class" id="buttonAddRemoveFirstName" class="table__button_add_remove_first_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Add/remove last name class" id="buttonAddRemoveLastName" class="table__button_add_remove_last_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Add/remove middle name class" id="buttonAddRemoveMiddleName" class="table__button_add_remove_middle_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Check classes" id="buttonCheckClasses" class="table__button_check_classes">
                     </td>
                 </tr>
             </table>
-            <div class="button_section__output_color"></div>
+            <div class="button_section__output_info" id="divOutputInfo"></div>
         </section>
     </div>
 
