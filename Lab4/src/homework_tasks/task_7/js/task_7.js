@@ -1,53 +1,40 @@
 'use strict';
-const radioBuildingType = document.querySelectorAll('input[name="radioBuildingType"]');
 
-const hiddenFloor = () => {
-    document.querySelector('.table__floor_tr').setAttribute('hidden', '');
-};
+const setPosts = (target, postIndex, posts, postsStatus) => {
+    if (!postsStatus.includes('active')) {
+        target.nextElementSibling.classList.toggle('div_post__body_display');
 
-const unHiddenFloor = () => {
-    document.querySelector('.table__floor_tr').removeAttribute('hidden');
-};
-
-radioBuildingType[0].addEventListener('change', unHiddenFloor)
-radioBuildingType[1].addEventListener('change', unHiddenFloor)
-radioBuildingType[2].addEventListener('change', hiddenFloor)
-
-const buttonCheckSuggestions = document.querySelector('#buttonCheckSuggestions');
-
-buttonCheckSuggestions.addEventListener('click', () => {
-    const numberPrice = document.querySelector('#numberPrice').value;
-    const numberFloor = document.querySelector('#numberFloor').value;
-    const outputField = document.querySelector('.button_section__output_status');
-
-    if (!radioBuildingType[0].checked && !radioBuildingType[1].checked && !radioBuildingType[2].checked) {
-        outputField.innerHTML = `<p>Choose type of dwelling!</p>`;
-        console.log('Choose type of dwelling!');
+        postsStatus[parseInt(target.getAttribute('value'))] = 'active';
     } else {
-        if (numberPrice > 600000 || numberPrice < 0) {
-            outputField.innerHTML = `<p><strong>Not interested!</strong></p>`;
-            console.log('Not interested!');
-        } else {
-            if (radioBuildingType[0].checked || radioBuildingType[1].checked) {
-                if (numberFloor < 1 || numberFloor > 47) {
-                    outputField.innerHTML = `<p><strong>Not interested!</strong></p>`;
-                    console.log('Not interested!');
-                } else {
-                    if (numberFloor >= 2 && numberFloor <= 6) {
-                        outputField.innerHTML =
-                            `<p><strong>Interested!</strong></p>`;
-                        console.log('Interested!');
-                    } else {
-                        outputField.innerHTML =
-                            `<p><strong>Not interested!</strong></p>`;
-                        console.log('Not interested!');
-                    }
-                }
-            } else {
-                outputField.innerHTML =
-                    `<p><strong>Interested!</strong></p>`;
-                console.log('Interested!');
-            }
+        if (postsStatus.includes('active')) {
+            const activeIndex = postsStatus.findIndex((element) => element === 'active');
+
+            posts[activeIndex].nextElementSibling.classList.toggle('div_post__body_display');
+            target.nextElementSibling.classList.toggle('div_post__body_display');
+
+            postsStatus[parseInt(posts[postIndex].getAttribute('value'))] = 'active';
+            postsStatus[activeIndex] = 'inactive';
         }
     }
-});
+}
+
+const posts = document.querySelectorAll('.button_section__div_post .div_post__head');
+let postsStatus = [];
+
+for (let i = 0; i < posts.length; i++) {
+    posts[i].classList.add('inactive');
+    posts[i].setAttribute('value', i.toString());
+    postsStatus.push('inactive');
+
+    posts[i].addEventListener('click', (event) => {
+        const target = event.target;
+
+        setPosts(target, i, posts, postsStatus);
+    });
+
+    posts[i].addEventListener('mouseover', (event) => {
+        const target = event.target;
+
+        setPosts(target, i, posts, postsStatus);
+    });
+}
