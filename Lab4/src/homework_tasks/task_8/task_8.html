@@ -10,11 +10,18 @@
 <div class="wrapper">
     <div class="container">
         <section class="button_section">
-            <fieldset class="button_section__random_number_fieldset">
-                <label for="buttonRandomNumber" class="table__label_random_number">Random number</label>
-                <div class="button_section__div_output_number"><h3 class="div_output_number__h3">0</h3></div>
-                <input type="button" value="Generate random number[-100; 100]" name="buttonRandomNumber" id="buttonRandomNumber" class="table__button_random_number">
-            </fieldset>
+            <table class="button_section__table">
+                <tr>
+                    <td>
+                        <div class="table__div_blocks_container"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="New block!" id="buttonNewBlock" class="table__button_new_block">
+                    </td>
+                </tr>
+            </table>
         </section>
     </div>
 
