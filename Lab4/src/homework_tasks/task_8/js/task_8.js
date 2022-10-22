@@ -26,4 +26,3 @@ buttonNewBlock.addEventListener('click', () => {
     blocksContainer.appendChild(block);
     setEventsToBlocks();
 });
-

@@ -3,6 +3,9 @@
   padding: 0
   box-sizing: border-box
 
+body
+  overflow: hidden
+
 .wrapper
   width: 100%
   height: 100vh
@@ -14,21 +17,84 @@
   border: 2px solid black
   margin: 10px 0
   padding: 10px
-  max-width: 35vw
+  max-width: 100vw
 
-.button_section__show_hide_fieldset
-  text-align: center
+.button_section__table
+  border-collapse: collapse
+
+.table__header
+  background-color: lightgrey
   border: 2px solid darkgrey
-  padding: 5px
-  margin: 10px 0
-  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
 
-.table__button_show_hide_text
-  width: 100%
-  min-width: 150px
-  height: 28px
-  font-style: italic
+.header__div_colors
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  width: 200px
+  height: 50px
+  margin: 0 10px
 
-.button_section__div_text
-  margin: 10px 0
+.div_colors__div_color
+  width: 29px
+  height: 29px
+  border: 1px solid black
+  cursor: pointer
+
+.header__div_font_styles
+  display: flex
+  justify-content: space-between
+  width: 100px
+  margin: 0 10px
+
+.div_font_styles__div_font_style
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 29px
+  height: 29px
+  border: 1px solid black
+  border-radius: 50%
+  cursor: pointer
+
+  &:nth-child(1)
+    font-weight: bold
+
+  &:nth-child(2)
+    font-style: italic
+
+  &:nth-child(3)
+    text-decoration: underline
+
+.header__div_font_size
+  margin: 0 10px
+
+.div_font_size__text_font_size
+  width: 50px
+  height: 30px
+  font-size: 18px
+
+.header__div_fonts
+  margin: 0 10px
+
+.div_fonts__select_fonts
+  height: 30px
+  font-size: 18px
+  cursor: pointer
+
+.table__body
+  border-bottom: 2px solid darkgrey
+  border-left: 2px solid darkgrey
+  border-right: 2px solid darkgrey
+
+.body__div_input
+  padding: 10px
+
+.div_input__p_input
   width: 100%
+  height: 200px
+  font-family: Arial, serif
+  font-size: 14px

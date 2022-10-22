@@ -10,37 +10,59 @@
 <div class="wrapper">
     <div class="container">
         <section class="button_section">
-            <fieldset class="button_section__show_hide_fieldset">
-                <input type="button" value="Show/hide text" name="buttonShowHideText"
-                       id="buttonShowHideText" class="table__button_show_hide_text">
-                <div class="button_section__div_text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, animi
-                        blanditiis consequuntur dicta eaque earum eius enim et eum facere, id ipsam
-                        laboriosam officiis perspiciatis, quidem rem saepe unde vitae.
-                    </p>
-                    <p>
-                        Adipisci aperiam, cumque distinctio dolorem ducimus, eum eveniet expedita fuga illum
-                        in inventore, labore minima nam nobis non nostrum placeat quam quibusdam quisquam
-                        rerum totam ullam veniam. A, aut, cupiditate.
-                    </p>
-                    <p>
-                        Ad, consectetur dicta doloribus et iure laudantium ratione vitae! Animi dolores
-                        excepturi labore neque officia porro quam sapiente tempora voluptatibus. Autem
-                        cupiditate dignissimos ea facere incidunt iure omnis, reprehenderit unde.
-                    </p>
-                    <p>
-                        Aspernatur cum debitis dignissimos esse id, illo itaque iusto laboriosam maiores
-                        natus, nihil odit officia quibusdam quis quod recusandae repudiandae tempora totam
-                        velit veniam? Aliquam pariatur quaerat rem sit suscipit.
-                    </p>
-                    <p>
-                        Architecto, aspernatur beatae commodi cum deserunt distinctio ea error eum ex
-                        excepturi impedit inventore ipsa ipsum iusto laborum modi molestiae nemo odit optio
-                        praesentium quam repellat saepe sed voluptatibus voluptatum!
-                    </p>
-                </div>
-            </fieldset>
+            <table class="button_section__table">
+                <tr class="table__header">
+                    <td>
+                        <div class="header__div_colors">
+                            <div class="div_colors__div_color" value="red"></div>
+                            <div class="div_colors__div_color" value="green"></div>
+                            <div class="div_colors__div_color" value="blue"></div>
+                            <div class="div_colors__div_color" value="pink"></div>
+                            <div class="div_colors__div_color" value="yellow"></div>
+                            <div class="div_colors__div_color" value="orange"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="header__div_font_styles">
+                            <div class="div_font_styles__div_font_style" value="B">B</div>
+                            <div class="div_font_styles__div_font_style" value="I">I</div>
+                            <div class="div_font_styles__div_font_style" value="U">U</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="header__div_font_size">
+                            <input type="text" name="textFontSize" id="textFontSize" class="div_font_size__text_font_size" value="14">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="header__div_fonts">
+                            <select name="fonts" id="fonts" class="div_fonts__select_fonts">
+                                <option value="Arial">Arial</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Serif">Serif</option>
+                                <option value="Verdana">Verdana</option>
+                                <option value="Calibri">Calibri</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__body">
+                    <td colspan="4">
+                        <div class="body__div_input">
+                            <p id="pInput" class="div_input__p_input">
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus delectus iste reprehenderit vel voluptatum! Accusamus asperiores cumque
+                                    ipsa libero molestiae officia, tempore velit voluptatibus! Amet illo ipsam rem tenetur veritatis.
+                                </span>
+                                <span>
+                                    A ad alias aliquid assumenda, consequuntur debitis doloribus, error inventore ipsum iure laboriosam laudantium maiores maxime nesciunt nisi
+                                    officia praesentium recusandae voluptas. Doloremque doloribus facilis, labore laborum pariatur qui unde.
+                                </span>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </section>
     </div>
 
