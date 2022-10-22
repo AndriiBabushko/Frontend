@@ -1,53 +1,47 @@
 'use strict';
 
-const chooseSelector = (chosenElem) => chosenElem.style.backgroundColor = '#6389df';
+const getTodayDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    return dd + '.' + mm + '/' + yyyy;
+}
 
-const unChooseSelector = (chosenElem) => chosenElem.style.backgroundColor = '#4169E1FF';
+const createComment = (author, comment) => {
+    const divComment = document.createElement('div');
+    divComment.classList.add('button_section__div_comment');
+    const divCommentHead = document.createElement('div');
+    divCommentHead.classList.add('div_comment__head');
+    const divHeadAuthor = document.createElement('div');
+    divHeadAuthor.classList.add('head__author');
+    divHeadAuthor.innerHTML = author;
+    const divHeadCommentTime = document.createElement('div');
+    divHeadCommentTime.classList.add('head__comment_time');
+    divHeadCommentTime.innerHTML = getTodayDate();
+    const divCommentBody = document.createElement('div');
+    divCommentBody.classList.add('div_comment__body');
+    const paragraphBody = document.createElement('p');
+    paragraphBody.classList.add('body__paragraph');
+    paragraphBody.innerHTML = comment;
 
-const hiddenSelector = (selector) => selector.style.display = 'none';
-// const hiddenSelector = (selector) => selector.setAttribute('hidden', '');
+    divCommentHead.appendChild(divHeadAuthor);
+    divCommentHead.appendChild(divHeadCommentTime);
+    divCommentBody.appendChild(paragraphBody);
+    divComment.appendChild(divCommentHead);
+    divComment.appendChild(divCommentBody);
 
-const unhiddenSelector = (selector) => selector.style.display = 'flex';
-// const unhiddenSelector = (selector) => selector.removeAttribute('hidden');
+    const hr = document.querySelector('.button_section__hr');
+    hr.parentNode.insertBefore(divComment, hr);
+};
 
-const divHTMLText = document.querySelector('#divHTMLText');
-const divCSSText = document.querySelector('#divCSSText');
-const divJSText = document.querySelector('#divJSText');
+const buttonAddComment = document.querySelector('#buttonAddComment');
+const textName = document.querySelector('#textName');
+const textareaComment = document.querySelector('#textareaComment');
 
-const asideHTML = document.querySelector('#asideHTML');
-const asideCSS = document.querySelector('#asideCSS');
-const asideJS = document.querySelector('#asideJS');
+buttonAddComment.addEventListener('click', () => {
+    const nameValue = textName.value;
+    const commentValue = textareaComment.value;
 
-chooseSelector(asideHTML);
-hiddenSelector(divCSSText);
-hiddenSelector(divJSText);
-
-asideHTML.addEventListener('click', () => {
-    chooseSelector(asideHTML);
-    unChooseSelector(asideCSS);
-    unChooseSelector(asideJS);
-
-    unhiddenSelector(divHTMLText);
-    hiddenSelector(divCSSText);
-    hiddenSelector(divJSText);
-});
-
-asideCSS.addEventListener('click', () => {
-    chooseSelector(asideCSS);
-    unChooseSelector(asideHTML);
-    unChooseSelector(asideJS);
-
-    unhiddenSelector(divCSSText);
-    hiddenSelector(divHTMLText);
-    hiddenSelector(divJSText);
-});
-
-asideJS.addEventListener('click', () => {
-    chooseSelector(asideJS);
-    unChooseSelector(asideHTML);
-    unChooseSelector(asideCSS);
-
-    unhiddenSelector(divJSText);
-    hiddenSelector(divHTMLText);
-    hiddenSelector(divCSSText);
+    createComment(nameValue, commentValue);
 });

@@ -11,39 +11,78 @@
   flex-direction: column
 
 .button_section
-  border: 2px solid royalblue
+  border: 2px solid black
   margin: 10px 0
-  max-width: 60vw
-  display: flex
-  align-items: center
-  height: 700px
-
-.button_section__aside
-  background-color: royalblue
-  height: 100%
-  max-width: 30vw
+  width: 80vw
   display: flex
   flex-direction: column
-  align-items: center
-  justify-content: center
 
-.aside__HTML, .aside__CSS, .aside__JS
-  height: 75px
+.button_section__div_post, .button_section__div_comment
   width: 100%
+  padding: 15px
+
+.div_post__head
+  background-color: #a5a5a5
+  font-style: italic
   font-size: 24px
   display: flex
-  align-items: center
-  justify-content: center
-  &:hover
-    background-color: #6389df
-    cursor: pointer
+  justify-content: space-between
 
-.button_section__div_HTML_text, .button_section__div_CSS_text, .button_section__div_JS_text
-  background-color: bisque
-  height: 100%
+.div_post__body, .div_comment__body
+  border-bottom: 2px dashed #a5a5a5
+  border-left: 2px dashed #a5a5a5
+  border-right: 2px dashed #a5a5a5
+
+.div_post__head, .div_post__body
+  padding: 10px
+
+.div_comment__head
+  background-color: #a5a5a5
+  padding: 5px
+  margin-bottom: 5px
+
+  .head__author
+    font-weight: bold
+    font-size: 18px
+    margin-bottom: 5px
+
+  .head__comment_time
+    font-size: 14px
+
+.div_comment__body
+  padding: 5px
+  font-size: 16px
+
+.button_section__hr
+  margin: 10px 15px 0 15px
+  border: 1px solid #a5a5a5
+
+.button_section__div_leave_comment
   padding: 15px
-  display: flex
-  flex-direction: column
-  justify-content: center
-  p
-    margin: 10px 0
+
+  .div_leave_comment__head
+    margin: 5px 0
+
+    .head__title
+      font-weight: bold
+
+  .div_leave_comment__body
+
+    .body_div_input_name
+      margin: 5px 0
+
+    .body__div_input_comment
+      display: flex
+      flex-direction: column
+      margin-bottom: 5px
+
+      .div_input_comment__textarea_comment
+        resize: none
+        height: 110px
+        font-size: 18px
+        font-family: "Times New Roman", serif
+
+  .foot__div_button_add_comment
+    .div_button_add_comment__button
+      width: 100%
+      height: 28px
