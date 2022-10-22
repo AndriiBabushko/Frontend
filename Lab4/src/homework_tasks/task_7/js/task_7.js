@@ -32,9 +32,9 @@ for (let i = 0; i < posts.length; i++) {
         setPosts(target, i, posts, postsStatus);
     });
 
-    posts[i].addEventListener('mouseover', (event) => {
-        const target = event.target;
-
-        setPosts(target, i, posts, postsStatus);
-    });
+    // posts[i].addEventListener('mouseover', (event) => {
+    //     const target = event.target;
+    //
+    //     setPosts(target, i, posts, postsStatus);
+    // });
 }
