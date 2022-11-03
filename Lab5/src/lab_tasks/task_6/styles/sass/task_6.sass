@@ -1,0 +1,43 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  // outline: 1px solid red
+
+.wrapper
+  width: 100%
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+.section
+  border: 2px solid black
+  margin: 10px 0
+  padding: 10px
+  text-align: center
+  width: 600px
+  max-width: 60vw
+
+.section__table
+  width: 100%
+  border-collapse: collapse
+
+.table__button_add_elem_table
+  margin: 10px 0
+  width: 100%
+  height: 28px
+  cursor: pointer
+
+.table__output_table
+  border-collapse: collapse
+  width: 100%
+  tr
+    &:first-child
+      td
+        border: 2px solid black
+        cursor: auto
+    td
+      border: 1.5px solid black
+      cursor: pointer
