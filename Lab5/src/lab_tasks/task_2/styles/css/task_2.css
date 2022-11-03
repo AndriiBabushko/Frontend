@@ -12,15 +12,11 @@
   flex-direction: column;
 }
 
-.button_section {
-  border: 2px solid black;
-  margin: 10px 0;
-  padding: 10px;
-  max-width: 40vw;
-}
-
-.button_section__table {
-  border-collapse: collapse;
+.square {
+  display: block;
+  border: 2px solid #a5a5a5;
+  width: 50px;
+  height: 50px;
 }
 
 /*# sourceMappingURL=task_2.css.map */
