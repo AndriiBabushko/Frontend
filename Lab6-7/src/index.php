@@ -28,23 +28,15 @@
                 <h3 class="index__main__heading_task">Завдання на лабораторну роботу</h3>
                 <section class="index__main__subtask">
                     <img src="../img/task_1.png" alt="task_1" class="index__main__img_subtask">
-                    <p class="index__main_p_subtask">Виконання завдання знаходиться <a href="task_1/task_1.html">тут.</a></p>
-                </section>
-                <section class="index__main__subtask">
+                    <br>
                     <img src="../img/task_2.png" alt="task_2" class="index__main__img_subtask">
-                    <p class="index__main_p_subtask">Виконання завдання знаходиться <a href="task_2/task_2.html">тут.</a></p>
-                </section>
-                <section class="index__main__subtask">
+                    <br>
                     <img src="../img/task_3.png" alt="task_3" class="index__main__img_subtask">
-                    <p class="index__main_p_subtask">Виконання завдання знаходиться <a href="task_3/task_3.html">тут.</a></p>
-                </section>
-                <section class="index__main__subtask">
+                    <br>
                     <img src="../img/task_4.png" alt="task_4" class="index__main__img_subtask">
-                    <p class="index__main_p_subtask">Виконання завдання знаходиться <a href="task_4/task_4.html">тут.</a></p>
-                </section>
-                <section class="index__main__subtask">
+                    <br>
                     <img src="../img/task_5.png" alt="task_5" class="index__main__img_subtask">
-                    <p class="index__main_p_subtask">Виконання завдання знаходиться <a href="task_5/task_5.html">тут.</a></p>
+                    <p class="index__main_p_subtask">Виконання завдання знаходиться <a href="task/php/task.php">тут.</a></p>
                 </section>
             </section>
         </main>
