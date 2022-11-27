@@ -11,7 +11,7 @@ const createProductItems = () => {
     const divItemsContainer = document.createElement('div');
     divItemsContainer.setAttribute('id', 'itemsContainer');
     divItemsContainer.setAttribute('class', 'd-flex flex-row flex-wrap justify-content-center justify-content-lg-center justify-content-md-between align-items-center"');
-
+    console.log(programmingCourses.length);
     for (let i = 0; i < programmingCourses.length; i++) {
         const divItemBlock = document.createElement('div');
         divItemBlock.setAttribute('id', 'itemBlock');
@@ -94,7 +94,7 @@ const createProductItems = () => {
         cardCommentsButton.setAttribute('id', 'commentsButton');
         cardCommentsButton.setAttribute('class', 'btn btn-outline-light my-2');
         cardCommentsButton.setAttribute('data-bs-toggle', 'modal');
-        cardCommentsButton.setAttribute('data-bs-target', '#staticBackdrop');
+        cardCommentsButton.setAttribute('data-bs-target', `#staticBackdrop${i}`);
         cardCommentsButton.style.width = '100%';
         cardCommentsButton.innerHTML = 'Show comments';
 
@@ -164,7 +164,7 @@ const createProductItems = () => {
 
         const divModalFade = document.createElement('div');
         divModalFade.setAttribute('class', 'modal fade');
-        divModalFade.setAttribute('id', 'staticBackdrop');
+        divModalFade.setAttribute('id', `staticBackdrop${i}`);
         divModalFade.setAttribute('data-bs-backdrop', 'static');
         divModalFade.setAttribute('data-bs-keyboard', 'false');
         divModalFade.setAttribute('tabindex', '-1');
@@ -262,6 +262,8 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
     const commentsData = readCommentsData(i);
     if(commentsData.length > 0){
         for (let j = 0; j < commentsData.length; j++) {
+            console.log(`${i} product`);
+            console.log(commentsData[j]);
             // creating comment card header
             const commentCardUsername = document.createElement('h5');
             commentCardUsername.setAttribute('class', 'card-title');
@@ -297,6 +299,7 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
             deleteCommentButton.addEventListener('click', () => {
                 deleteCommentsDataById(i, commentsData[j].id);
                 deleteModalCommentCards();
+                createModalCommentCards(divModalBody, createCommentButton, i);
             });
 
             const divCommentCardFooter = document.createElement('div');
@@ -307,7 +310,6 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
             const divCommentCard = document.createElement('div');
             divCommentCard.setAttribute('id', 'commentCard');
             divCommentCard.setAttribute('class', 'card m-1');
-            // divCommentCard.style.width = '200px';
             divCommentCard.appendChild(divCommentCardHeader);
             divCommentCard.appendChild(divCommentCardBody);
             divCommentCard.appendChild(divCommentCardFooter);
@@ -316,12 +318,12 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
         }
     }
     else {
+        console.log('EMPTY COMMENTS');
         const warningNoCommentsBlock = document.createElement('div');
         warningNoCommentsBlock.setAttribute('class', 'alert alert-secondary');
         warningNoCommentsBlock.innerHTML = 'No comments yet here!';
         createCommentButton.before(warningNoCommentsBlock);
     }
-
 }
 
 function deleteModalCommentCards() {
@@ -331,13 +333,4 @@ function deleteModalCommentCards() {
     }
 }
 
-function deleteCommentForm() {
-    const createCommentForm = document.querySelector('#createCommentForm');
-    createCommentForm.remove();
-}
-
 showProductItems(createProductItems());
-
-
-
-
