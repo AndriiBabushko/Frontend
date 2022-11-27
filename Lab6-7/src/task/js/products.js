@@ -296,7 +296,7 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
 
             deleteCommentButton.addEventListener('click', () => {
                 deleteCommentsDataById(i, commentsData[j].id);
-                deleteModalCommentCards();
+                deleteModalCommentCards(deleteCommentButton.parentNode.parentNode.parentNode);
                 createModalCommentCards(divModalBody, createCommentButton, i);
             });
 
@@ -322,10 +322,10 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
     }
 }
 
-function deleteModalCommentCards() {
-    const divCommentCard = document.querySelectorAll('#commentCard');
-    for (let i = 0; i < divCommentCard.length; i++) {
-        divCommentCard[i].remove();
+function deleteModalCommentCards(commentCard) {
+    const divCommentCards = commentCard.querySelectorAll('#commentCard');
+    for (let i = 0; i < divCommentCards.length; i++) {
+        divCommentCards[i].remove();
     }
 }
 
