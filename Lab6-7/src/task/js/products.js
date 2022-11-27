@@ -64,7 +64,7 @@ const createProductItems = () => {
             const basketData = readBasketData();
             let newBasketData = {};
 
-            if (basketData.length > 0){
+            if (basketData.length > 0) {
                 newBasketData = {
                     'id': basketData.length + 1,
                     'title': programmingCourses[i].title,
@@ -222,11 +222,13 @@ function createCommentForm(divForm, j, i) {
                 const commentText = document.querySelector('#commentText').value;
                 const commentsData = readCommentsData(i);
                 const userData = 'admin';
-                const timePost = new Date().toLocaleDateString('de-DE');
-                console.log(timePost);
+                const date = new Date();
+                const current_date = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
+                const current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                const timePost = current_date + " " + current_time;
                 let commentData = {};
 
-                if (commentsData.length > 0){
+                if (commentsData.length > 0) {
                     let id = commentsData[commentsData.length - 1].id;
                     id++;
                     commentData = {
@@ -260,7 +262,7 @@ function createCommentForm(divForm, j, i) {
 
 function createModalCommentCards(divModalBody, createCommentButton, i) {
     const commentsData = readCommentsData(i);
-    if(commentsData.length > 0){
+    if (commentsData.length > 0) {
         for (let j = 0; j < commentsData.length; j++) {
             console.log(`${i} product`);
             console.log(commentsData[j]);
@@ -316,8 +318,7 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
 
             divModalBody.firstChild.before(divCommentCard);
         }
-    }
-    else {
+    } else {
         console.log('EMPTY COMMENTS');
         const warningNoCommentsBlock = document.createElement('div');
         warningNoCommentsBlock.setAttribute('class', 'alert alert-secondary');
