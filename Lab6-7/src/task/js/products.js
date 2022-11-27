@@ -1,7 +1,6 @@
 'use strict';
 
 const showProductItems = (divItems) => {
-    const programmingCourses = readProgrammingCoursesData();
     const productsTitle = document.querySelector('#productsTitle');
     productsTitle.parentElement.appendChild(divItems);
 };
@@ -11,7 +10,6 @@ const createProductItems = () => {
     const divItemsContainer = document.createElement('div');
     divItemsContainer.setAttribute('id', 'itemsContainer');
     divItemsContainer.setAttribute('class', 'd-flex flex-row flex-wrap justify-content-center justify-content-lg-center justify-content-md-between align-items-center"');
-    console.log(programmingCourses.length);
     for (let i = 0; i < programmingCourses.length; i++) {
         const divItemBlock = document.createElement('div');
         divItemBlock.setAttribute('id', 'itemBlock');
@@ -264,8 +262,6 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
     const commentsData = readCommentsData(i);
     if (commentsData.length > 0) {
         for (let j = 0; j < commentsData.length; j++) {
-            console.log(`${i} product`);
-            console.log(commentsData[j]);
             // creating comment card header
             const commentCardUsername = document.createElement('h5');
             commentCardUsername.setAttribute('class', 'card-title');
@@ -319,7 +315,6 @@ function createModalCommentCards(divModalBody, createCommentButton, i) {
             divModalBody.firstChild.before(divCommentCard);
         }
     } else {
-        console.log('EMPTY COMMENTS');
         const warningNoCommentsBlock = document.createElement('div');
         warningNoCommentsBlock.setAttribute('class', 'alert alert-secondary');
         warningNoCommentsBlock.innerHTML = 'No comments yet here!';
@@ -334,4 +329,59 @@ function deleteModalCommentCards() {
     }
 }
 
+function deleteComments() {
+    const divItemsContainer = document.querySelector('#itemsContainer');
+    divItemsContainer.remove();
+}
+
+function sortingProgrammingCourses(sortingBy, sortingType) {
+    const programmingCourses = readProgrammingCoursesData();
+
+    if (sortingBy === 'title' && sortingType === 'ascendingSort') {
+        programmingCourses.sort((obj1, obj2) => (obj1.title.length > obj2.title.length) ? 1 : (obj1.title.length < obj2.title.length) ? -1 : 0);
+    }
+
+    if (sortingBy === 'title' && sortingType === 'descendingSort') {
+        programmingCourses.sort((obj1, obj2) => (obj1.title.length < obj2.title.length) ? 1 : (obj1.title.length > obj2.title.length) ? -1 : 0);
+    }
+
+    if (sortingBy === 'price' && sortingType === 'ascendingSort') {
+        programmingCourses.sort((obj1, obj2) => (obj1.price > obj2.price) ? 1 : (obj1.price < obj2.price) ? -1 : 0);
+    }
+
+    if (sortingBy === 'price' && sortingType === 'descendingSort') {
+        programmingCourses.sort((obj1, obj2) => (obj1.price < obj2.price) ? 1 : (obj1.price > obj2.price) ? -1 : 0);
+    }
+
+    if (sortingBy === 'time' && sortingType === 'ascendingSort') {
+        programmingCourses.sort((obj1, obj2) => (obj1.time.length > obj2.time.length) ? 1 : (obj1.time.length < obj2.time.length) ? -1 : 0);
+    }
+
+    if (sortingBy === 'time' && sortingType === 'descendingSort') {
+        programmingCourses.sort((obj1, obj2) => (obj1.time.length < obj2.time.length) ? 1 : (obj1.time.length > obj2.time.length) ? -1 : 0);
+    }
+
+    localStorage.setItem('programmingCourses', JSON.stringify(programmingCourses));
+    deleteComments();
+    showProductItems(createProductItems());
+}
+
 showProductItems(createProductItems());
+
+const sortingSelect = document.querySelector("#sortBy");
+sortingSelect.addEventListener('change', (event) => {
+    const sortingBy = sortingSelect.value;
+    const sortingType = document.querySelector('input[name="sortingType"]:checked').value;
+
+    sortingProgrammingCourses(sortingBy, sortingType);
+});
+
+const sortingRadios = document.querySelectorAll('input[name="sortingType"]');
+for (let i = 0; i < sortingRadios.length; i++) {
+    sortingRadios[i].addEventListener('change', (event) => {
+        const sortingBy = sortingSelect.value;
+        const sortingType = document.querySelector('input[name="sortingType"]:checked').value;
+
+        sortingProgrammingCourses(sortingBy, sortingType);
+    });
+}

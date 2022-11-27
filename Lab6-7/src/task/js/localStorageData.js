@@ -42,6 +42,12 @@ function deleteProgrammingCoursesDataById(id) {
     localStorage.setItem('programmingCourses', JSON.stringify(programmingCourses));
 }
 
+function ascendingProgrammingCoursesDataSort(){
+    const programmingCourses = readProgrammingCoursesData();
+    programmingCourses.sort((obj1, obj2) => (obj1.id > obj2.id) ? 1 : (obj1.id < obj2.id) ? -1 : 0);
+    localStorage.setItem('programmingCourses', JSON.stringify(programmingCourses));
+}
+
 function readBasketData() {
     let basketData = null;
 

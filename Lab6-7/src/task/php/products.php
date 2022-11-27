@@ -23,47 +23,27 @@
 <main role="main" class="container main">
     <div class="row mt-3">
         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-            <h1 class="title fs-4 text-center mb-2" id="productsTitle">All products:</h1>
-            <!--            <div class="d-flex justify-content-center justify-content-lg-center justify-content-md-between align-items-center flex-wrap">-->
-            <!--                <div class="card m-1 bg-dark text-light text-center" style="width: 250px">-->
-            <!--                    <div class="card-header border-bottom">-->
-            <!--                        <h5 class="card-title">Course</h5>-->
-            <!--                    </div>-->
-            <!--                    <div class="card-body border-bottom">-->
-            <!--                        <p class="card-subtitle ">Price:</p>-->
-            <!--                        <p class="card-text">...</p>-->
-            <!---->
-            <!--                        <p class="card-subtitle">Time to learn:</p>-->
-            <!--                        <p class="card-text">...</p>-->
-            <!--                    </div>-->
-            <!--                    <div class="card-footer">-->
-            <!--                        <a href="#" class="btn btn-outline-light" style="width: 100%">Buy</a>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!-- Button trigger modal -->
-            <!--            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">-->
-            <!--                Launch static backdrop modal-->
-            <!--            </button>-->
-            <!---->
-            <!-- Modal -->
-            <!--            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
-            <!--                <div class="modal-dialog modal-dialog-scrollable">-->
-            <!--                    <div class="modal-content">-->
-            <!--                        <div class="modal-header">-->
-            <!--                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Comments</h1>-->
-            <!--                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-            <!--                        </div>-->
-            <!--                        <div class="modal-body">-->
-            <!--                            ...-->
-            <!--                        </div>-->
-            <!--                        <div class="modal-footer">-->
-            <!--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                            <button type="button" class="btn btn-primary">Understood</button>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
+            <h1 class="title fs-4 text-center mb-2 pb-2 border-bottom" id="productsTitle">All products:</h1>
+            <div class="mb-3 text-start fs-5 fw-normal border-bottom">
+                <label class="form-label" for="sortBy">Sort by:</label>
+                <select class="form-select form-select-lg" name="sortBy" id="sortBy">
+                    <option selected>Choose one</option>
+                    <option value="title">By Title</option>
+                    <option value="price">By Price</option>
+                    <option value="time">By Time</option>
+                </select>
+            </div>
+            <div class="mb-3 pb-2 text-start fs-5 fw-normal border-bottom">
+                <label class="form-label" for="">Sorting type:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sortingType" id="ascendingSort" value="ascendingSort" checked>
+                    <label class="form-check-label" for="ascendingSort">Ascending sort</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sortingType" id="descendingSort" value="descendingSort">
+                    <label class="form-check-label" for="descendingSort">Descending sort</label>
+                </div>
+            </div>
         </div>
         <?php include('sidebar.php'); ?>
     </div>

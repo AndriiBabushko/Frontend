@@ -293,7 +293,9 @@ function createForm(divForm, i) {
     return divForm;
 }
 
+ascendingProgrammingCoursesDataSort();
 let programmingCourses = readProgrammingCoursesData();
+
 
 createTable(programmingCourses)
 showTable();
