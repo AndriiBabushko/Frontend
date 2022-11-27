@@ -23,13 +23,9 @@ function updateProgrammingCoursesDataById(updateData, id) {
 
     const objIndex = programmingCourses.findIndex((obj => obj.id == id));
 
-    console.log('Before update: ', programmingCourses[objIndex]);
-
     programmingCourses[objIndex].title = updateData.title;
     programmingCourses[objIndex].price = updateData.price;
     programmingCourses[objIndex].time = updateData.time;
-
-    console.log('After update: ', programmingCourses[objIndex]);
 
     localStorage.setItem('programmingCourses', JSON.stringify(programmingCourses));
 }
@@ -66,7 +62,6 @@ function addBasketData(addData) {
     localStorage.setItem('basketData', JSON.stringify(basketData))
 }
 
-
 function deleteBasketDataById(id) {
     const basketData = readBasketData();
 
@@ -79,22 +74,41 @@ function deleteBasketDataById(id) {
     localStorage.setItem('basketData', JSON.stringify(basketData));
 }
 
-function readCommentsData() {
+function readCommentsData(programmingCourseIndex) {
     let commentsData = null;
 
-    if (localStorage.getItem('commentsData') === null) {
+    if (localStorage.getItem('programmingCourses') === null) {
         commentsData = [];
     } else {
-        commentsData = JSON.parse(localStorage.getItem('commentsData'));
+        const programmingCourses = JSON.parse(localStorage.getItem('programmingCourses'));
+        commentsData = programmingCourses[programmingCourseIndex].comments;
     }
 
     return commentsData;
 }
 
-function addCommentsData(addData) {
-    const commentsData = readBasketData();
+function addCommentsData(addData, programmingCourseIndex) {
+    const commentsData = readCommentsData(programmingCourseIndex);
 
     commentsData.push(addData);
 
-    localStorage.setItem('commentsData', JSON.stringify(commentsData))
+    let programmingCourses = JSON.parse(localStorage.getItem('programmingCourses'));
+    programmingCourses[programmingCourseIndex].comments = commentsData;
+
+    localStorage.setItem('programmingCourses', JSON.stringify(programmingCourses));
+}
+
+function deleteCommentsDataById(programmingCourseIndex, id) {
+    const commentsData = readCommentsData(programmingCourseIndex);
+
+    for (let j = commentsData.length - 1; j >= 0; --j) {
+        if (commentsData[j].id === id) {
+            commentsData.splice(j, 1);
+        }
+    }
+
+    let programmingCourses = JSON.parse(localStorage.getItem('programmingCourses'));
+    programmingCourses[programmingCourseIndex].comments = commentsData;
+
+    localStorage.setItem('programmingCourses', JSON.stringify(programmingCourses));
 }

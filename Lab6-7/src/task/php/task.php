@@ -44,7 +44,7 @@
             //                        password VARCHAR(30) NOT NULL
             //                    );";
             //                    $DB->exec($sqlScript);
-                echo "<h1>Hello, " . $_SESSION['login'] . "</h1>";
+                echo "<h1 class='title fs-4 text-center mb-2'>Hello, " . $_SESSION['login'] . "</h1>";
             ?>
         </div>
 

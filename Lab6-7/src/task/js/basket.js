@@ -75,14 +75,36 @@ const createBasketTable = () => {
             removeButton.setAttribute('value', values[0].toString());
 
             removeButton.innerHTML = 'Remove';
-            tbody_td_remove_button.appendChild(removeButton);
 
+            tbody_td_remove_button.appendChild(removeButton);
             tbody_tr.appendChild(tbody_td_remove_button);
             tbody.appendChild(tbody_tr);
         }
 
+        const tfoot = document.createElement('tfoot');
+        tfoot.setAttribute('class', 'table-dark');
+        const tfootTr = document.createElement('tr');
+        const tfootLabelTd = document.createElement('td');
+        tfootLabelTd.setAttribute('colspan', '2');
+        tfootLabelTd.setAttribute('scope', 'row');
+        tfootLabelTd.setAttribute('class', 'text-center');
+        tfootLabelTd.innerHTML = 'Total price:';
+
+        const tfootTotalPriceTd = document.createElement('td');
+        tfootTotalPriceTd.setAttribute('colspan', '2');
+        tfootTotalPriceTd.setAttribute('class', 'text-center');
+        let totalPrice = 0;
+        for (let i = 0; i < basketData.length; i++) {
+            totalPrice += parseInt(basketData[i].price);
+        }
+        tfootTotalPriceTd.innerHTML = totalPrice.toString();
+
+        tfootTr.appendChild(tfootLabelTd);
+        tfootTr.appendChild(tfootTotalPriceTd);
+        tfoot.appendChild(tfootTr);
         table.appendChild(thead);
         table.appendChild(tbody);
+        table.appendChild(tfoot);
 
         return table;
     } else {
@@ -116,9 +138,9 @@ function addEventsToRemoveButtons() {
     }
 }
 
-function callTableCreation(){
+function callTableCreation() {
     const table = createBasketTable();
-    if (table){
+    if (table) {
         showBasketTable(table);
     }
 }

@@ -50,9 +50,8 @@ const createTable = (programmingCourses) => {
     // create table body
     for (let i = 0; i < programmingCourses.length; i++) {
         const tbody_tr = document.createElement('tr');
-        const keys = Object.keys(programmingCourses[i]);
-        const values = Object.values(programmingCourses[i]);
-        for (let j = 0; j < keys.length; j++) {
+        const values = Object.values(programmingCourses[i]).filter(elem => typeof elem !== 'object');
+        for (let j = 0; j < values.length; j++) {
             if (j === 0) {
                 const tbody_th = document.createElement('th');
                 tbody_th.setAttribute('scope', 'row');
@@ -152,14 +151,16 @@ function addEventToCreateOKButtons(programmingCourses) {
                         'id': id,
                         'title': titleValue,
                         'price': priceValue,
-                        'time': timeToLearnValue
+                        'time': timeToLearnValue,
+                        'comments': []
                     };
                 } else {
                     programmingCourse = {
                         'id': 1,
                         'title': titleValue,
                         'price': priceValue,
-                        'time': timeToLearnValue
+                        'time': timeToLearnValue,
+                        'comments': []
                     };
                 }
 
@@ -210,7 +211,8 @@ function addEventsToEditButtons(programmingCourses) {
                 const programmingCourse = {
                     'title': titleValue,
                     'price': priceValue,
-                    'time': timeToLearnValue
+                    'time': timeToLearnValue,
+                    'comments': []
                 };
 
                 updateProgrammingCoursesDataById(programmingCourse, id);
